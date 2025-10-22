@@ -1,84 +1,77 @@
 body {
   font-family: Arial;
-  background-color: lightgray;
   margin: 0;
-  color: black;
+  background-color: #222;
+  color: #fff;
 }
 
 .container {
   width: 90%;
-  margin: auto;
+  margin: 20px auto;
 }
 
 .navbar {
-  background: white;
-  padding: 10px;
+  background: #333;
+  color: white;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
+  text-decoration: none;
+  color: white;
 }
 
 .nav-links a {
-  margin-right: 15px;
   text-decoration: none;
-  color: blue;
+  color: #ddd;
+  margin-left: 15px;
+}
+
+.nav-links a.active-link {
+  color: yellow;
 }
 
 .btn {
-  padding: 5px 10px;
-  border: 1px solid black;
+  padding: 6px 10px;
+  border: none;
   cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
 }
 
-.btn-create {
-  background: blue;
-  color: white;
-}
-
-.btn-read-more {
-  background: gray;
-  color: white;
-}
-
-.btn-delete {
-  background: red;
-  color: white;
-}
-
-.btn-edit {
-  background: yellow;
-  color: black;
-}
-
-.btn-submit {
-  background: green;
-  color: white;
-}
+.btn-create { background: blue; color: white; }
+.btn-read-more { background: gray; color: white; }
+.btn-delete { background: red; color: white; }
+.btn-edit { background: yellow; color: black; }
+.btn-submit { background: green; color: white; }
+.btn-cancel { background: gray; color: white; }
 
 .list-header {
-  margin-bottom: 15px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .filter-input {
   padding: 5px;
-  width: 200px;
+  width: 250px;
 }
 
 .post-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
+  gap: 15px;
 }
 
 .post-card {
-  background: white;
-  border: 1px solid #ccc;
+  background: #333;
+  border: 1px solid #555;
   padding: 10px;
 }
 
@@ -89,8 +82,15 @@ body {
 }
 
 .card-title {
+  font-size: 18px;
   font-weight: bold;
   margin: 5px 0;
+}
+
+.card-meta {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 5px;
 }
 
 .card-desc {
@@ -98,35 +98,69 @@ body {
 }
 
 .post-detail {
-  background: white;
-  padding: 15px;
-  border: 1px solid #ccc;
+  background: #1f1f1f;
+  color: white;
+  padding: 20px;
+  border: 1px solid #555;
+  box-sizing: border-box;
+  width: 95%;
+  margin: auto;
 }
 
 .detail-img {
   width: 100%;
-  max-height: 300px;
+  max-height: 350px;
+  object-fit: cover;
+  margin: 15px 0;
+}
+
+.detail-content {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.post-content {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin-top: 10px;
+  padding: 5px;
+  background: #2a2a2a;
+  border: 1px solid #444;
 }
 
 .post-form {
-  background: white;
-  padding: 15px;
+  background: #333;
+  padding: 20px;
+  border: 1px solid #555;
+  border-radius: 4px;
 }
 
 .form-group {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .form-group label {
   display: block;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
   width: 100%;
-  padding: 5px;
-  border: 1px solid gray;
+  padding: 8px;
+  border: 1px solid #777;
+  background: #222;
+  color: white;
+}
+
+.form-group textarea {
+  min-height: 120px;
+}
+
+.form-actions {
+  margin-top: 15px;
 }
 
 .error {
@@ -134,8 +168,23 @@ body {
   font-size: 13px;
 }
 
+@media (max-width: 992px) {
+  .post-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .post-grid {
     grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    margin-top: 10px;
   }
 }
